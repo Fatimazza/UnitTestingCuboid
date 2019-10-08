@@ -18,7 +18,7 @@ class MainViewModelTest {
     private val dummyLength = 3.0
     private val dummyWidth = 4.0
 
-    private val dummyCircumference = 96.0
+    private val dummyCircumference = 90.0
     private val dummySurfaceArea = 52.0
     private val dummyVolume = 24.0
 
@@ -63,7 +63,7 @@ class MainViewModelTest {
         `when`(mainViewModel.getCircumference()).thenReturn(dummyCircumference)
 
         val circumference = mainViewModel.getCircumference()
-        verify(cuboidModel).getCircumference()
+        verify(cuboidModel).getVolume()
         assertEquals(dummyCircumference, circumference, 0.0001)
     }
 
