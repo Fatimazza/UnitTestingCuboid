@@ -10,4 +10,5 @@
     <string name="calculate_volume">Hitung Volume</string>
     <string name="calculate_circumference">Hitung Keliling</string>
     <string name="calculate_surface_area">Hitung Luas Area</string>
+    <string name="empty_field">Field ini tidak boleh kosong</string>
 </resources>
