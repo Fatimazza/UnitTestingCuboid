@@ -39,4 +39,20 @@ class MainActivityTest {
         onView(withId(R.id.tv_result)).check(matches(isDisplayed()))
         onView(withId(R.id.tv_result)).check(matches(withText(dummyCircumference)))
     }
-}
+
+    @Test
+    fun getSurfaceArea() {
+        onView(withId(R.id.edt_length)).perform(typeText(dummyLength), closeSoftKeyboard())
+        onView(withId(R.id.edt_width)).perform(typeText(dummyWidth), closeSoftKeyboard())
+        onView(withId(R.id.edt_height)).perform(typeText(dummyHeight), closeSoftKeyboard())
+
+        onView(withId(R.id.btn_save)).check(matches(isDisplayed()))
+        onView(withId(R.id.btn_save)).perform(click())
+
+        onView(withId(R.id.btn_calculate_surface_area)).check(matches(isDisplayed()))
+        onView(withId(R.id.btn_calculate_surface_area)).perform(click())
+
+        onView(withId(R.id.tv_result)).check(matches(isDisplayed()))
+        onView(withId(R.id.tv_result)).check(matches(withText(dummySurfaceArea)))
+    }
+ }
