@@ -71,4 +71,43 @@ class MainActivityTest {
         onView(withId(R.id.tv_result)).check(matches(isDisplayed()))
         onView(withId(R.id.tv_result)).check(matches(withText(dummyVolume)))
     }
+
+    @Test
+    fun checkEmptyInput() {
+        //checking Height input
+        onView(withId(R.id.edt_height)).perform(typeText(emptyInput), closeSoftKeyboard())
+
+        onView(withId(R.id.btn_save)).check(matches(isDisplayed()))
+        onView(withId(R.id.btn_save)).perform(click())
+
+        onView(withId(R.id.edt_height)).check(matches(hasErrorText(fieldEmpty)))
+        onView(withId(R.id.edt_height)).perform(typeText(dummyHeight), closeSoftKeyboard())
+
+        onView(withId(R.id.btn_save)).check(matches(isDisplayed()))
+        onView(withId(R.id.btn_save)).perform(click())
+
+        //checking Length input
+        onView(withId(R.id.edt_length)).perform(typeText(emptyInput), closeSoftKeyboard())
+
+        onView(withId(R.id.btn_save)).check(matches(isDisplayed()))
+        onView(withId(R.id.btn_save)).perform(click())
+
+        onView(withId(R.id.edt_length)).check(matches(hasErrorText(fieldEmpty)))
+        onView(withId(R.id.edt_length)).perform(typeText(dummyLength), closeSoftKeyboard())
+
+        onView(withId(R.id.btn_save)).check(matches(isDisplayed()))
+        onView(withId(R.id.btn_save)).perform(click())
+
+        //checking Width input
+        onView(withId(R.id.edt_width)).perform(typeText(emptyInput), closeSoftKeyboard())
+
+        onView(withId(R.id.btn_save)).check(matches(isDisplayed()))
+        onView(withId(R.id.btn_save)).perform(click())
+
+        onView(withId(R.id.edt_width)).check(matches(hasErrorText(fieldEmpty)))
+        onView(withId(R.id.edt_width)).perform(typeText(dummyWidth), closeSoftKeyboard())
+
+        onView(withId(R.id.btn_save)).check(matches(isDisplayed()))
+        onView(withId(R.id.btn_save)).perform(click())
+    }
  }
